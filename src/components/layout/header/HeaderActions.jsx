@@ -7,27 +7,29 @@ import {
   Settings,
   CreditCard,
 } from "lucide-react";
-import { NavLink } from "react-router-dom";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from "./ui/navigation-menu";
+} from "../../ui/navigation-menu";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@radix-ui/react-dropdown-menu";
-
-import {
   DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuShortcut,
-} from "./ui/dropdown-menu";
+} from "../../ui/dropdown-menu";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 function HeaderActions() {
   return (
@@ -35,18 +37,33 @@ function HeaderActions() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavLink to="/cart" className="uppercase font-bold tracking-wider">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                <ShoppingBag className="w-5 h-5" />
-              </NavigationMenuLink>
-            </NavLink>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <Sheet>
+                <SheetTrigger>
+                  <Heart className="w-5 h-5" />
+                </SheetTrigger>
+                <SheetContent side="left">
+                  <SheetHeader className="text-base uppercase font-bold tracking-wider  border-b border-border p-6">
+                    Your wishlist
+                  </SheetHeader>
+                </SheetContent>
+              </Sheet>
+            </NavigationMenuLink>
           </NavigationMenuItem>
+
           <NavigationMenuItem>
-            <NavLink to="/wishlist">
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                <Heart className="w-5 h-5" />
-              </NavigationMenuLink>
-            </NavLink>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              <Sheet>
+                <SheetTrigger>
+                  <ShoppingBag className="w-5 h-5" />
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <SheetHeader className="text-base uppercase font-bold tracking-wider  border-b border-border p-6">
+                    Your Cart
+                  </SheetHeader>
+                </SheetContent>
+              </Sheet>
+            </NavigationMenuLink>
           </NavigationMenuItem>
 
           {/* User menu */}
@@ -95,6 +112,7 @@ function HeaderActions() {
               </DropdownMenuContent>
             </DropdownMenu>
           </NavigationMenuItem>
+          {/* User menu ends here */}
         </NavigationMenuList>
       </NavigationMenu>
     </div>
