@@ -2,19 +2,10 @@ import {
   ShoppingBag,
   Heart,
   User,
-  Github,
-  LifeBuoy,
-  Cloud,
   LogOut,
-  PlusCircle,
-  MessageSquare,
-  UserPlus,
-  Users,
   Keyboard,
   Settings,
   CreditCard,
-  Mail,
-  Plus,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import {
@@ -29,19 +20,14 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuSubContent,
   DropdownMenuTrigger,
 } from "@radix-ui/react-dropdown-menu";
 
 import {
   DropdownMenuGroup,
   DropdownMenuLabel,
-  DropdownMenuPortal,
   DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubTrigger,
 } from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
 
 function HeaderActions() {
   return (

@@ -1,5 +1,13 @@
+import MarqueeBox from "@/components/MarqueeBox";
+import Hero from "@/components/sections/Hero";
+
 function Home() {
-  return <div></div>;
+  return (
+    <>
+      <Hero />
+      <MarqueeBox />
+    </>
+  );
 }
 
 export default Home;
