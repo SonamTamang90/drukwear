@@ -6,6 +6,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "../ui/navigation-menu";
+import HeaderActions from "../HeaderActions";
 
 const links = [
   {
@@ -31,34 +32,40 @@ function Header() {
     <header className="border-b border-border">
       <div className="container">
         <div className="py-4">
-          {/* Logo and main nav */}
-          <div className="flex items-center gap-5">
-            <Link className="inline-block text-xl font-bold uppercase tracking-widest">
-              Drukwear
-            </Link>
+          <div className="flex items-center justify-between">
+            {/* Logo and main nav */}
+            <div className="flex items-center gap-5">
+              <Link className="inline-block text-xl font-bold uppercase tracking-widest">
+                Drukwear
+              </Link>
 
-            {/* Main nav */}
-            <NavigationMenu>
-              <NavigationMenuList>
-                {links.map((link) => (
-                  <NavigationMenuItem key={link.label}>
-                    <NavLink
-                      to={link.href}
-                      className="uppercase font-bold tracking-wider"
-                    >
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
+              {/* Main nav */}
+              <NavigationMenu>
+                <NavigationMenuList>
+                  {links.map((link) => (
+                    <NavigationMenuItem key={link.label}>
+                      <NavLink
+                        to={link.href}
+                        className="uppercase font-bold tracking-wider"
                       >
-                        {link.label}
-                      </NavigationMenuLink>
-                    </NavLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-            {/* Main nav */}
+                        <NavigationMenuLink
+                          className={navigationMenuTriggerStyle()}
+                        >
+                          {link.label}
+                        </NavigationMenuLink>
+                      </NavLink>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+              {/* Main nav */}
+            </div>
+            {/* Logo and main nav ends here */}
+
+            {/* Header actions  */}
+            <HeaderActions />
+            {/* Header actions ends here */}
           </div>
-          {/* Logo and main nav ends here */}
         </div>
       </div>
     </header>
