@@ -30,6 +30,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import WishlistCard from "@/components/WishlistCard";
 
 function HeaderActions() {
   return (
@@ -46,6 +47,9 @@ function HeaderActions() {
                   <SheetHeader className="text-base uppercase font-bold tracking-wider  border-b border-border p-6">
                     Your wishlist
                   </SheetHeader>
+                  <div className="p-5 space-y-5">
+                    <WishlistCard />
+                  </div>
                 </SheetContent>
               </Sheet>
             </NavigationMenuLink>
