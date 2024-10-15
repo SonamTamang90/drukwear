@@ -31,6 +31,7 @@ export default {
           600: "#22E39F",
           DEFAULT: "#22E39f",
         },
+
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -46,8 +47,8 @@ export default {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#DB1215",
+          foreground: "",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",

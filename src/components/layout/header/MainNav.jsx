@@ -42,14 +42,12 @@ function MainNav() {
   return (
     <>
       {/* Main menu for large screens */}
+      {/* TODO: Fix <a> cannot appear as a descendant of <a>. Error Component Stack */}
       <NavigationMenu className="hidden md:block">
         <NavigationMenuList>
           {links.map((link) => (
             <NavigationMenuItem key={link.label}>
-              <NavLink
-                to={link.href}
-                className="uppercase font-bold tracking-wider"
-              >
+              <NavLink to={link.href} className="uppercase tracking-wider">
                 <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                   {link.label}
                 </NavigationMenuLink>
