@@ -29,3 +29,19 @@ export async function getWishlists() {
   console.log(data);
   return data;
 }
+
+// Deleting the wishlist
+
+export async function deleteWishlist(productId) {
+  const { data, error } = await supabase
+    .from("wishlists")
+    .delete()
+    .eq("id", productId);
+
+  if (error) {
+    console.error(error);
+    throw new Error("Cabin could not be deleted");
+  }
+
+  return data;
+}
