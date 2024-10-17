@@ -30,7 +30,7 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import WishlistCard from "@/components/WishlistCard";
+import WishlistCard from "@/feature/wishlist/WishlistCard";
 
 function HeaderActions() {
   return (
