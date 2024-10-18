@@ -16,7 +16,7 @@ function ProductCard({ product }) {
         <img
           src={productImage}
           alt={productName}
-          className="rounded-md shadow-sm"
+          className="w-full rounded-md shadow-sm"
         />
 
         <div className="absolute top-4 w-full flex items-start justify-between px-6">

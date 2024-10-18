@@ -41,7 +41,7 @@ function NewArrival() {
           <CarouselContent>
             {newArrivalProducts &&
               newArrivalProducts.map((product) => (
-                <CarouselItem key={product.id} className="md:basis-1/5">
+                <CarouselItem key={product.id} className="md:basis-1/4">
                   <ProductCard product={product} />
                 </CarouselItem>
               ))}

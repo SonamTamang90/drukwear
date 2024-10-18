@@ -42,6 +42,21 @@ export async function getTopSellerProducts() {
   return data;
 }
 
+// Fetching falsh deals products
+export async function getFlashDealProducts() {
+  const { data, error } = await supabase
+    .from("products")
+    .select("*")
+    .eq("deal", true);
+
+  if (error) {
+    console.error(error);
+    throw new Error("Top sellers could not be loaded");
+  }
+
+  return data;
+}
+
 // Fetching men category
 export async function getMenCategory() {
   const { data, error } = await supabase
