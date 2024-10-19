@@ -1,43 +1,78 @@
-/* eslint-disable react/prop-types */
-import { Badge } from "../../components/ui/badge";
-import { Card, CardContent, CardFooter } from "../../components/ui/card";
+import ColorOptions from "@/components/ColorOptions";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { formatCurrency } from "@/utils/helpers";
-import WishlistButton from "../wishlist/WishlistButton";
-import { useWishlist } from "../wishlist/useWishlist";
+import { motion, spring } from "framer-motion";
+import { Heart } from "lucide-react";
 
 function ProductCard({ product }) {
-  const { id, productName, productImage, price, discount } = product;
-
-  const { isWishlisted, handleWishlistToggle } = useWishlist(id);
+  const {
+    product_name,
+    main_image_url,
+    price,
+    discount_price,
+    colors,
+    edition,
+  } = product;
 
   return (
-    <Card className="cursor-pointer">
-      <CardContent className="relative">
+    <Card className="w-[240px] aspect-square cursor-pointer group">
+      <CardHeader className="relative">
         <img
-          src={productImage}
-          alt={productName}
-          className="w-full rounded-md shadow-sm"
+          src={main_image_url}
+          alt={product_name}
+          className="w-full object-cover rounded-sm"
         />
-
-        <div className="absolute top-4 w-full flex items-start justify-between px-6">
-          <Badge>New</Badge>
-          <WishlistButton
-            isWishlisted={isWishlisted}
-            onClick={handleWishlistToggle}
-          />
-        </div>
+        {/* Wishlist Button */}
+        <motion.div
+          initial={{ scale: 1 }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 300 }}
+          className="absolute top-3 right-4"
+        >
+          <Button
+            variant="outline"
+            size="icon"
+            className="bg-white/90 border-none rounded-full"
+          >
+            <Heart size={20} />
+          </Button>
+        </motion.div>
+      </CardHeader>
+      <CardContent>
+        <span className="inline-block text-xs text-neutral-500 mb-3">
+          {edition}
+        </span>
+        <CardTitle className="transition-all duration-300 ease-linear group-hover:underline">
+          {product_name}
+        </CardTitle>
       </CardContent>
-
       <CardFooter>
-        <h3 className="mb-3">{productName}</h3>
-        <div className="flex items-start font-semibold">
-          {discount && (
-            <p className="text-secondary mr-6">{formatCurrency(discount)}</p>
+        <div className="flex items-start gap-4">
+          {discount_price && (
+            <p className="text-secondary">{formatCurrency(discount_price)}</p>
           )}
-          <p className={`${discount ? "line-through" : ""}`}>
-            {formatCurrency(price)}
-          </p>
+          {
+            <p
+              className={`${
+                discount_price
+                  ? "text-neutral-600 line-through"
+                  : "text-neutral-500"
+              }`}
+            >
+              {formatCurrency(price)}
+            </p>
+          }
         </div>
+
+        {/* Colors options */}
+        <ColorOptions colors={colors} />
       </CardFooter>
     </Card>
   );

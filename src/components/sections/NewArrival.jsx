@@ -1,5 +1,6 @@
 import { getNewProducts } from "@/services/apiProducts";
 import { useQuery } from "@tanstack/react-query";
+import ProductCard from "../../feature/product/ProductCard";
 import {
   Carousel,
   CarouselContent,
@@ -7,7 +8,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
-import ProductCard from "../../feature/product/ProductCard";
 
 function NewArrival() {
   const {
@@ -23,20 +23,15 @@ function NewArrival() {
     <section className="py-11">
       <div className="container">
         {/* Section header */}
-        <div className="mb-11">
-          <h2 className="text-3xl uppercase font-extrabold tracking-widest mb-2">
+        <div className="mb-8">
+          <h2 className="text-2xl uppercase font-extrabold tracking-widest">
             New Arrival
           </h2>
-          <p className="tracking-wider space-x-2">
-            <span className="text-secondary font-semibold uppercase ">
-              17% off
-            </span>
-            <span>on all our newly launch products</span>
-          </p>
         </div>
         {/* Section header ends here */}
 
         {/* Display new arrival product list */}
+
         <Carousel>
           <CarouselContent>
             {newArrivalProducts &&

@@ -7,7 +7,7 @@ export default {
   theme: {
     container: {
       center: "true",
-      padding: "2rem",
+      padding: "3rem",
       screens: {
         "2xl": "1400px",
       },
@@ -34,7 +34,6 @@ export default {
           600: "#22E39F",
           DEFAULT: "#22E39f",
         },
-
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -51,7 +50,6 @@ export default {
         },
         secondary: {
           DEFAULT: "#F45B5B",
-          foreground: "",
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
@@ -75,6 +73,28 @@ export default {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
+      },
+      keyframes: {
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },

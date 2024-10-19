@@ -3,6 +3,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import GlobalLayout from "./layouts/GlobalLayout";
 import Home from "./pages/Home";
+import Men from "./pages/Men";
+import ProductDetail from "./feature/product/ProductDetail";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -20,6 +22,8 @@ function App() {
         <Routes>
           <Route element={<GlobalLayout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/men" element={<Men />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -6,7 +6,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "../ui/carousel";
-import { Button } from "../ui/button";
 
 function Categories() {
   return (

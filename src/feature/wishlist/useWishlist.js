@@ -15,6 +15,10 @@ export function useWishlist(newProductId) {
   const { data: wishlists, isLoading } = useQuery({
     queryKey: ["wishlists"],
     queryFn: getWishlists,
+
+    onSuccess: () => {
+      queryClient.invalidateQueries("wishlists");
+    },
   });
 
   // Mutation to add a product to the wishlist using productID(foreing key)

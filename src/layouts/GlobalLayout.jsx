@@ -4,13 +4,13 @@ import { Outlet } from "react-router-dom";
 
 function GlobalLayout() {
   return (
-    <>
+    <div className="h-full flex flex-col justify-between">
       <Header />
       <main>
         <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

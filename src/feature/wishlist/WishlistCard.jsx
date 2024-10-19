@@ -15,12 +15,12 @@ function WishlistCard() {
           >
             <div className="relative w-[120px] h-42 shrink-0 overflow-hidden aspect-4/5 rounded-md shadow-md">
               <img
-                src={wishlist.products.productImage}
+                src={wishlist.products.main_image_url}
                 className="w-full h-full object-cover object-center"
               />
             </div>
             <div className="grow items-stretch flex flex-col flex-wrap gap-1">
-              <h3 className="font-bold">{wishlist.products.productName}</h3>
+              <h3 className="font-bold">{wishlist.products.product_name}</h3>
               <p className="mb-5">{formatCurrency(wishlist.products.price)}</p>
               <Button className="text-sm uppercase font-semibold tracking-wider">
                 Add to cart

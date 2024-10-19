@@ -14,7 +14,7 @@ function WishlistButton({ isWishlisted, onClick }) {
         variant="outline"
         size="icon"
         onClick={onClick}
-        className="bg-neutral-100 rounded-full"
+        className=" bg-neutral-100 rounded-full"
       >
         {isWishlisted ? (
           <Heart size={20} color="#F45B5B" fill="#F45B5B" />
