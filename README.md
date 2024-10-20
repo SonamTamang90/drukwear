@@ -1,6 +1,6 @@
-# React + Vite
+# Drukwear - Clothing E-commerce Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Drukwear is an open-source, fully functional clothing e-commerce website built using React.js, Tailwind CSS, Shadcn UI, React Query, and Supabase for backend data storage. It is designed to provide a clean, modern shopping experience for users while offering developers a robust starting point for building scalable e-commerce applications.
 
 Currently, two official plugins are available:
 
