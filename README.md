@@ -13,11 +13,6 @@ Drukwear is an open-source, fully functional clothing e-commerce website built u
 - 🗄️ **Supabase Backend**: Secure and scalable backend with real-time updates.
 
 
-
-
-
-
-
   ## 🛠️ Built With
 
 - **React.js** - JavaScript library for building user interfaces.
@@ -25,4 +20,17 @@ Drukwear is an open-source, fully functional clothing e-commerce website built u
 - **Shadcn UI** - A modern and customizable component library.
 - **Supabase** - Backend as a service providing real-time databases.
 - **React Query** - Data fetching library for efficient client-side state management.
+
+
+## 🎬 Screenshots
+
+### HERO 
+![Hero Section](./screenshots/hero.png)
+
+### Product Page
+![Product Page](./screenshots/product.png)
+
+### Wishlist Page
+![Wishlist Page](./screenshots/wishlist.png)
+
 
