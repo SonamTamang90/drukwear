@@ -25,7 +25,7 @@ Drukwear is an open-source, fully functional clothing e-commerce website built u
 ## 🎬 Screenshots
 
 ### Home page 
-![Home Page](./screenshots/landing-page.png)
+![Home Page](./screenshots/landingpage.png)
 
 ### Product Page
 ![Product Page](./screenshots/product.png)
