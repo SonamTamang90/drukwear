@@ -11,3 +11,12 @@ Drukwear is an open-source, fully functional clothing e-commerce website built u
 - 🎨 **Modern UI**: Built with Shadcn UI and Tailwind CSS for a clean, modern look.
 - ⚡ **Fast & Performant**: Optimized with React Query for efficient data fetching.
 - 🗄️ **Supabase Backend**: Secure and scalable backend with real-time updates.
+
+  ## 🛠️ Built With
+
+- **React.js** - JavaScript library for building user interfaces.
+- **Tailwind CSS** - A utility-first CSS framework for rapid UI development.
+- **Shadcn UI** - A modern and customizable component library.
+- **Supabase** - Backend as a service providing real-time databases.
+- **React Query** - Data fetching library for efficient client-side state management.
+
