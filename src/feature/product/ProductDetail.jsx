@@ -10,7 +10,7 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { Container, Leaf, Shirt, Star } from "lucide-react";
 import { useParams } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -19,6 +19,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 function ProductDetail() {
   // Fetching the current product id clicked
   const { id } = useParams();
+
+  // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   // Fetching all the products.
   const { data: products, isLoading } = useQuery({

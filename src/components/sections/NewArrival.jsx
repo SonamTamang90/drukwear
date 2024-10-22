@@ -24,7 +24,7 @@ function NewArrival() {
       <div className="container">
         {/* Section header */}
         <div className="mb-8">
-          <h2 className="text-2xl uppercase font-extrabold tracking-widest">
+          <h2 className="text-3xl uppercase font-extrabold tracking-widest">
             New Arrival
           </h2>
         </div>
@@ -36,7 +36,10 @@ function NewArrival() {
           <CarouselContent>
             {newArrivalProducts &&
               newArrivalProducts.map((product) => (
-                <CarouselItem key={product.id} className="md:basis-1/4">
+                <CarouselItem
+                  key={product.id}
+                  className="basis-full md:basis-1/4"
+                >
                   <ProductCard product={product} />
                 </CarouselItem>
               ))}

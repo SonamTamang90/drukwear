@@ -42,7 +42,7 @@ function HeaderActions() {
                 <SheetTrigger className="relative">
                   <Heart className="w-5 h-5" />
                   <div className="absolute -top-2 -right-2 w-5 h-5 flex items-center justify-center bg-secondary rounded-full text-sm text-white">
-                    <span></span>
+                    <span>0</span>
                   </div>
                 </SheetTrigger>
                 <SheetContent side="left">

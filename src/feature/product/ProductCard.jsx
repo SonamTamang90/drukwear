@@ -11,6 +11,7 @@ import { formatCurrency } from "@/utils/helpers";
 import { motion, spring } from "framer-motion";
 import { Heart } from "lucide-react";
 import { Link } from "react-router-dom";
+import WishlistButton from "../wishlist/WishlistButton";
 
 function ProductCard({ product }) {
   const {
@@ -23,62 +24,59 @@ function ProductCard({ product }) {
     edition,
   } = product;
 
+  // // Function to handle wishlist button click
+  // const handleWishlistClick = (event) => {
+  //   event.stopPropagation(); // Prevent navigation to the product details page
+  //   // Handle your wishlist logic here (e.g., add to wishlist)
+  //   console.log("Wishlist button clicked");
+  // };
+
   return (
-    <Link to={`/products/${id}`}>
-      <Card className="w-[240px] aspect-square cursor-pointer group">
-        <CardHeader className="relative">
+    <Card className="w-full md:w-[240px] aspect-square group">
+      <CardHeader className="relative">
+        <Link to={`/products/${id}`}>
           <img
             src={main_image_url}
             alt={product_name}
             className="w-full object-cover rounded-sm"
           />
-          {/* Wishlist Button */}
-          <motion.div
-            initial={{ scale: 1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            className="absolute top-3 right-4"
-          >
-            <Button
-              variant="outline"
-              size="icon"
-              className="bg-white/90 border-none rounded-full"
-            >
-              <Heart size={20} />
-            </Button>
-          </motion.div>
-        </CardHeader>
-        <CardContent>
-          <span className="inline-block text-xs text-neutral-500 mb-3">
-            {edition}
-          </span>
-          <CardTitle className="transition-all duration-300 ease-linear group-hover:underline">
+        </Link>
+
+        {/* Wishlist Button */}
+        <WishlistButton className="top-2 right-6" />
+      </CardHeader>
+      <CardContent>
+        <span className="inline-block text-xs text-neutral-500 mb-3">
+          {edition}
+        </span>
+        <Link to={`/products/${id}`}>
+          <CardTitle className="transition-all duration-300 ease-linear cursor-pointer group-hover:underline">
             {product_name}
           </CardTitle>
-        </CardContent>
-        <CardFooter>
-          <div className="flex items-start gap-4">
-            {discount_price && (
-              <p className="text-secondary">{formatCurrency(discount_price)}</p>
-            )}
-            {
-              <p
-                className={`${
-                  discount_price
-                    ? "text-neutral-600 line-through"
-                    : "text-neutral-500"
-                }`}
-              >
-                {formatCurrency(price)}
-              </p>
-            }
-          </div>
+        </Link>
+      </CardContent>
+      <CardFooter>
+        <div className="flex items-start gap-4">
+          {discount_price && (
+            <p className="text-secondary">{formatCurrency(discount_price)}</p>
+          )}
+          {
+            <p
+              className={`${
+                discount_price
+                  ? "text-neutral-600 line-through"
+                  : "text-neutral-500"
+              }`}
+            >
+              {formatCurrency(price)}
+            </p>
+          }
+        </div>
 
-          {/* Colors options */}
-          <ColorOptions colors={colors} />
-        </CardFooter>
-      </Card>
-    </Link>
+        {/* Colors options */}
+        <ColorOptions colors={colors} />
+      </CardFooter>
+    </Card>
   );
 }
 
