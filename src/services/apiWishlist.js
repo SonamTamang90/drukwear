@@ -1,7 +1,7 @@
 import supabase from "./supabase";
 
 // Adding a wishlist
-export async function addToWishlist(id) {
+export async function createWishlist(id) {
   const { data, error } = await supabase
     .from("wishlists")
     .insert([{ productId: id }]);
@@ -19,7 +19,7 @@ export async function getWishlists() {
   const { data, error } = await supabase
     .from("wishlists")
     .select(
-      `id, productId, products(id, productName, price, productImage, discount)`
+      `id, productId, products(id, product_name, price, main_image_url, discount_price)`
     );
 
   if (error) {

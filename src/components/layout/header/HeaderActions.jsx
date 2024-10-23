@@ -30,8 +30,12 @@ import {
   SheetHeader,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useWishlist } from "@/hooks/useWishlist";
+import WishlistCard from "@/feature/wishlist/WishlistCard";
 
 function HeaderActions() {
+  const { wishlists } = useWishlist();
+
   return (
     <div className="">
       <NavigationMenu>
@@ -42,14 +46,16 @@ function HeaderActions() {
                 <SheetTrigger className="relative">
                   <Heart className="w-5 h-5" />
                   <div className="absolute -top-2 -right-2 w-5 h-5 flex items-center justify-center bg-secondary rounded-full text-sm text-white">
-                    <span>0</span>
+                    <span className="text-xs">{wishlists?.length || 0}</span>
                   </div>
                 </SheetTrigger>
                 <SheetContent side="left">
                   <SheetHeader className="text-base uppercase font-bold tracking-wider  border-b border-border p-6">
                     Your wishlist
                   </SheetHeader>
-                  <div className="p-5 space-y-5"></div>
+                  <div className="p-5 space-y-5">
+                    <WishlistCard />
+                  </div>
                 </SheetContent>
               </Sheet>
             </NavigationMenuLink>
@@ -61,7 +67,7 @@ function HeaderActions() {
                 <SheetTrigger className="relative">
                   <ShoppingBag className="w-5 h-5" />
                   <div className="absolute -top-2 -right-2 w-5 h-5 bg-secondary rounded-full text-sm text-white">
-                    <span>0</span>
+                    <span className="text-xs">0</span>
                   </div>
                 </SheetTrigger>
                 <SheetContent side="right">
