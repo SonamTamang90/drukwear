@@ -5,6 +5,7 @@ import GlobalLayout from "./layouts/GlobalLayout";
 import Home from "./pages/Home";
 import Men from "./pages/Men";
 import ProductDetail from "./feature/product/ProductDetail";
+import Women from "./pages/Women";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,12 +18,13 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      <ReactQueryDevtools initialIsOpen={false} />
       <BrowserRouter>
         <Routes>
           <Route element={<GlobalLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/men" element={<Men />} />
+            <Route path="/women" element={<Women />} />
             <Route path="/products/:id" element={<ProductDetail />} />
           </Route>
         </Routes>

@@ -23,7 +23,7 @@ function ProductCard({ product }) {
   } = product;
 
   return (
-    <Card className="w-full md:w-[240px] aspect-square group">
+    <Card className="w-full max-w-[240px] aspect-square group">
       <CardHeader className="relative">
         <Link to={`/products/${id}`}>
           <img
