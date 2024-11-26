@@ -1,6 +1,6 @@
 # Drukwear - Clothing E-commerce Website
 
-Drukwear is an open-source, fully functional clothing e-commerce website built using React.js, Tailwind CSS, Shadcn UI, React Query, and Supabase for backend data storage. It is designed to provide a clean, modern shopping experience for users while offering developers a robust starting point for building scalable e-commerce applications.
+Drukwear is a fully functional clothing e-commerce platform meticulously developed using React.js, Tailwind CSS, Shadcn UI, and React Query, with Supabase serving as the backend for seamless data management. The platform is designed to deliver a clean, modern, and intuitive shopping experience, ensuring user satisfaction and ease of navigation.
 
 ## 🌟 Features
 
